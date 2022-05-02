@@ -8,39 +8,49 @@ const { NotImplementedError } = require('../extensions/index.js');
 */
 class BinarySearchTree {
 
-  root() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  constructor() {
+    this.items = {};
+  }
+  root(value) {
+    if (!value)
+      return null;
+    return this.root;
   }
 
-  add(data) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  add(value) {
+    if (!this.has(value)) {
+      this.items[value] = value;
+      return true;
+    }
+    return false;
   }
 
-  has(data) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has(value) {
+    return this.items.hasOwnProperty(value);
   }
 
-  find(data) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  find(value) {
+    if (this.has(value))
+      return this.items[value];
+    return null;
   }
 
-  remove(data) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  remove(value) {
+    if (this.has(value)) {
+      delete this.items[value];
+      return true;
+    }
+    return false;
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.items)
+      return Math.min(Object.keys(this.items));
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.items)
+      return Math.max(Object.keys(this.items));
   }
 }
 
